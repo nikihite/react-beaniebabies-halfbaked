@@ -11,7 +11,7 @@ export default function App() {
   return (
     <Router>
       <div className='App'>
-
+        welcome to my beanies
         <Switch>
           <Route exact path="/">
             <BeaniesPage />
