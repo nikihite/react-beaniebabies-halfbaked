@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { getBeanieBabies, getSingleBeanie } from './services/fetch-utils';
+import { getSingleBeanie } from './services/fetch-utils';
 
 export default function BeanieDetail() {
   const params = useParams();
@@ -11,7 +11,7 @@ export default function BeanieDetail() {
 
   useEffect(() => {
     async function doFetch() {
-      const data = await getBeanieBabies(params.id);
+      const data = await getSingleBeanie(params.id);
 
       setBeanieBaby(data);
     }
@@ -24,10 +24,10 @@ export default function BeanieDetail() {
   }
 
   return (
-    <div className='beanie-detail'>
+    <>
       {/* Feel free to uncomment and use the below code--but you'll need to figure out how to keep it from blowing up on load */}
       
-      {/* <Link to='/'>Home</Link>
+      <Link to='/'>Home</Link>
       <div className='beanie-detail' onClick={handleBeanieClick}>
         <div className='beanie-data'>
           <p>{beanieBaby.animal}</p>
@@ -46,7 +46,7 @@ export default function BeanieDetail() {
           <p>Swing Tag Generation: {beanieBaby.swingTagGeneration}</p>
           <p>Tush Tag Generation: {beanieBaby.tushTagGeneration}</p>
         </div>
-      </div>   */}
-    </div>
+      </div>
+    </>
   );
 }

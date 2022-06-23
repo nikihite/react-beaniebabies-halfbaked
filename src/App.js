@@ -20,10 +20,10 @@ export default function App() {
 
         <Switch>
           <Route exact path="/">
-            <ListPage />
+            <BeaniesPage />
           </Route>
           <Route exact path="/beanies/:id"> 
-            <DetailPage />
+            <BeanieDetail />
           </Route>
         </Switch>
       </div>
