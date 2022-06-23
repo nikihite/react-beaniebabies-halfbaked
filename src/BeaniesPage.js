@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { getBeanieBabies } from './services/fetch-utils';
 import BeaniesList from './BeaniesList';
+import Pagination from './Pagination';
 
 function App() {
   const [beanieBabies, setBeanieBabies] = useState([]);
